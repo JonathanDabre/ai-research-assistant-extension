@@ -13,11 +13,17 @@ body {
 .header {
     padding-bottom: 10px;
     border-bottom: 1px solid #eee;
+    display: flex;
+    flex-direction: row;
+}
+.header img{
+    margin: 2px 6px;
 }
 
 .header h2 {
     margin: 0px;
     color: #1a73e8;
+    
 }
 
 .actions {
