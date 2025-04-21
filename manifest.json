@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "AI Research Assistant",
+    "description": "Gemini Powered Research Assistant",
+    "version": "1.0",
+    "permissions":[
+        "activeTab",
+        "storage",
+        "sidePanel",
+        "scripting"
+    ],
+    "action": {
+        "default_title":"Research Assistant"
+    },
+    "side_panel":{
+        "default_path": "sidepanel.html"
+    },
+    "background":{
+        "service_worker": "background.js"
+    },
+    "host_permissions":[
+        "http://localhost:800/*",
+        "<all_urls>"
+    ],
+    "content_security_policy":{
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    }
+}
