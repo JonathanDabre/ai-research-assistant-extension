@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
 
     document.getElementById('summarizeBtn').addEventListener('click', summarizeText);
-    document.getElementById('savedNotesBtn').addEventListener('click', saveNotes);
+    document.getElementById('saveNotesBtn').addEventListener('click', saveNotes);
 
 
 })
