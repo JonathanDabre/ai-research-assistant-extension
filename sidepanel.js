@@ -1,4 +1,9 @@
+//Backend URL
+const backendUrl = "https://gemini-reasearch-assistant.onrender.com"
+
+
 document.addEventListener('DOMContentLoaded', () => {
+
     // Load saved notes
     chrome.storage.local.get(['researchNotes'], function(result) {
         if (result.researchNotes) {
@@ -56,7 +61,7 @@ async function summarizeText() {
             return;
         }
 
-        const response = await fetch('http://localhost:8080/api/process/summarize', {
+        const response = await fetch(`${backendUrl}/api/process/summarize`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ content: result, operation: 'summarize' })
@@ -86,7 +91,7 @@ async function getMeaningOfText() {
             return;
         }
 
-        const response = await fetch('http://localhost:8080/api/process/meaning', {
+        const response = await fetch(`${backendUrl}/api/process/meaning`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ content: result, operation: 'meaning' })
@@ -116,7 +121,7 @@ async function translateText(language = 'marathi') {
             return;
         }
 
-        const response = await fetch('http://localhost:8080/api/process/translate', {
+        const response = await fetch(`${backendUrl}/api/process/translate`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
