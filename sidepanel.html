@@ -2,28 +2,39 @@
 <html lang="en">
 <head>
     <title>Research Assistant</title>
-    <link rel="stylesheet" href="sidepanel.css">
+    <!-- Include Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <img height="20px" src="https://pngimg.com/d/meta_PNG5.png" alt="">
-            <h2>Shasanyaan AI Assistant</h2>
+<body class="m-0 p-4 font-sans">
+    <div class="flex flex-col gap-5">
+        <div class="pb-2 border-b border-gray-200 flex flex-row">
+            <img class="h-5 my-0.5 mx-1.5" src="https://pngimg.com/d/meta_PNG5.png" alt="">
+            <h2 class="m-0 text-blue-600 font-semibold">Shasanyaan AI Assistant</h2>
         </div>
 
-        <div class="actions">
-            <button id="summarizeBtn">Summarize</button>
-            <button id="meaningBtn">Meaning</button>
-            <button id="translateBtn">Translate</button>
+        <div class="flex gap-2.5 flex-wrap">
+            <button id="summarizeBtn" class="px-4 py-2 bg-blue-600 text-white border-none rounded hover:bg-blue-700">Summarize</button>
+            <button id="meaningBtn" class="px-4 py-2 bg-blue-600 text-white border-none rounded hover:bg-blue-700">Meaning</button>
+            <div class="relative inline-block">
+                <button id="translateBtn" class="px-4 py-2 bg-blue-600 text-white border-none rounded hover:bg-blue-700">Translate</button>
+                <div id="languageDropdown" class="hidden absolute z-10 mt-1 bg-white rounded shadow-lg w-36">
+                    <ul class="py-1">
+                        <li><a href="#" class="language-option block px-4 py-2 text-gray-800 hover:bg-blue-100" data-lang="marathi">Marathi</a></li>
+                        <li><a href="#" class="language-option block px-4 py-2 text-gray-800 hover:bg-blue-100" data-lang="hindi">Hindi</a></li>
+                        <li><a href="#" class="language-option block px-4 py-2 text-gray-800 hover:bg-blue-100" data-lang="english">English</a></li>
+                        <li><a href="#" class="language-option block px-4 py-2 text-gray-800 hover:bg-blue-100" data-lang="tamil">Tamil</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <div class="notes">
-            <h3>Your Notes</h3>
-            <textarea id="notes" placeholder="Take notes here"></textarea>
-            <button id="saveNotesBtn">Save Notes</button>
+            <h3 class="mb-2">Your Notes</h3>
+            <textarea id="notes" class="w-full h-48 p-2.5 border border-gray-300 rounded resize-y mb-2.5" placeholder="Take notes here"></textarea>
+            <button id="saveNotesBtn" class="px-4 py-2 bg-blue-600 text-white border-none rounded hover:bg-blue-700">Save Notes</button>
         </div>
 
-        <div id="results"></div>
+        <div id="results" class="p-2.5 bg-gray-50 rounded mt-5"></div>
     </div>
     <script src="sidepanel.js"></script>
 </body>
